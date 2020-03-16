@@ -122,7 +122,7 @@ class OAuth2BasicAuthenticator < Auth::ManagedAuthenticator
     bearer_token = "Bearer #{token}"
     connection = Excon.new(
       user_json_url,
-      headers: { 'Authorization' => bearer_token, 'Accept' => 'application/json' }
+      headers: { 'Authorization' => bearer_token, 'Accept' => 'application/x-www-form-urlencoded' }
     )
     user_json_response = connection.request(method: user_json_method)
 
